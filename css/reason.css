@@ -1,0 +1,149 @@
+.reason-wes {
+    background: var(--light);
+    padding: 50px 8%;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+/* General container styling */
+.reason-container {
+    display: grid;
+    gap: 1rem;
+    margin: 20px;
+}
+
+.reason-title {
+    margin: 0;
+    font-size: 4.5rem;
+    line-height: 65px;
+    font-weight: 500;
+    color: var(--bg1);
+    font-family: "Lora", serif;
+    text-align: center;
+    margin: 2rem auto;
+padding: 0 10rem;
+}
+
+.reason-title span{
+    color: var(--accent);
+}
+
+.child {
+    padding: 20px;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.reason-container .child p {
+    font-size: 1rem;
+    line-height: 28px;
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+/* === Container 1 === */
+.container1 {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    width: 95.5%;
+    gap: 1rem;
+}
+
+.container1-left {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+.container1-left .child {
+    height: 100%;
+    padding: 1rem;
+}
+.container1-right {
+    height: fit-content;
+    padding: 1rem;
+}
+
+/* === Container 2 === */
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.container2 .child {
+    height: fit-content;
+    padding: 1rem;
+}
+
+/* === Container 3 (inverse of Container 1) === */
+.container3 {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    width: 95.5%;
+    gap: 1rem;
+}
+.container3-left {
+    height: 100%;
+    padding: 1rem;
+}
+.container3-right {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+.container3-right .child {
+    height: 100%;
+    padding: 1rem;
+}
+
+/* === Container 4 === */
+.container4 {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    gap: 1rem;
+}
+
+/* === Titles === */
+.reason-container .reason-num {
+    font-size: 2.5rem;
+    color: var(--accent);
+    font-weight: bold;
+    font-family: "Lora", serif;
+    margin-bottom: 10px;
+    margin-right: 2rem;
+}
+
+/* === Colors === */
+.bg1 { background: #212529; }
+.bg2 { background: #04171a; }
+.bg3 { background: var(--bg1); color: var(--light); }
+.bg4 { background: var(--accent); color: var(--bg1); }
+.bg5 { background: #212529; }
+.bg6 { background: #04171a; }
+.bg7 { background: var(--bg1); color: var(--light); }
+.bg8 { background: var(--accent); color: var(--bg1); }
+
+/* === Responsive for Mobile (max 900px) === */
+@media (max-width: 900px) {
+    .container1,
+    .container2,
+    .container3,
+    .container4 {
+        grid-template-columns: 1fr !important;
+        width: 100%;
+    }
+    
+    .container1-left,
+    .container3-right {
+        grid-template-rows: repeat( 1fr);
+        width: 100%;
+        height: fit-content;
+        gap: 1rem;
+    }
+
+.reason-title {
+        font-size: 2.5rem;
+        line-height: 45px;
+        padding: 0;
+        margin: auto;
+    }
+}
