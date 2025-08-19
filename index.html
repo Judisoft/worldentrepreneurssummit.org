@@ -462,7 +462,8 @@ businesses.</p></li>
                 required
               />
             </div>
-            <textarea name="message" placeholder="Message" required></textarea>
+            <textarea name="message" placeholder="Message" cols="30" rows="10" required></textarea>
+            <input type="hidden" name="_subject" value="New WES Contact Form Submission" />
             <div>
               <button class="btn primary" type="submit">Send Message</button>
             </div>
@@ -557,6 +558,7 @@ businesses.</p></li>
       <p>Subscribe for updates</p>
       <form action="https://formcarry.com/s/XpsxrVEMdy0" method="POST" enctype="multipart/form-data">
         <input name="email" placeholder="Enter your email" type="email" required />
+        <input type="hidden" name="_subject" value="New WES Newsletter Subscription" />
         <button class="btn">Subscribe</button>
       </form>
     </div>
@@ -573,47 +575,7 @@ businesses.</p></li>
   </div>
 </footer>
 
-    <!-- Register Modal -->
-    <div id="registerModal" class="modal" aria-hidden="true">
-      <div class="modal-inner">
-        <button class="close" aria-label="Close">&times;</button>
-        <h3 style="padding-bottom: 1rem;">Register for WES 2025</h3>
-        <p style="padding-bottom: 1rem;">Please fill the form to complete registration</p>
-        <form  action="https://formcarry.com/s/XpsxrVEMdy0" method="POST" enctype="multipart/form-data">
-          <div class="form-row">
-            <input name="name" placeholder="Full name" required />
-            <input
-              name="email"
-              placeholder="Your Email"
-              type="email"
-              required
-            />
-          </div>
-          <div class="form-row">
-            <input name="phone" placeholder="Whatsapp number" />
-            <select name="ticket">
-              <option>Select participant type</option>
-              <option>Californium Summit</option>
-              <option>Palladium Summit</option>
-              <option>Platinium Summit</option>
-              <option>Sponsor</option>
-              <option>Speaker</option>
-              <option>Visitor</option>
-              <option>Ambassador</option>
-              <option>Partner</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <input name="company" placeholder="Company name" required />
-          </div>
-          <div>
-            <button class="btn primary" type="submit">
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+    <!-- Register Modal removed: using standalone register.html page -->
 
     <!-- Bio Modal -->
     <div id="bioModal" class="modal" aria-hidden="true">
@@ -635,5 +597,24 @@ businesses.</p></li>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
     <script src="https://carrier.formcarry.com/js/v1.js"></script>
+    
+    <!-- Register Choice Modal -->
+    <div id="registerChoiceModal" class="modal" aria-hidden="true">
+      <div class="modal-inner">
+        <button class="close" aria-label="Close">&times;</button>
+        <h1 style="padding: 2rem;">Choose how you want to register</h3>
+        <div style="padding: 2rem;">
+          <div class="register-choice-grid">
+            <a class="choice-card" href="register.html?ticket=californium">Californium Summit</a>
+            <a class="choice-card" href="register.html?ticket=palladium">Palladium Summit</a>
+            <a class="choice-card" href="register.html?ticket=platinum">Platinum Summit</a>
+            <a class="choice-card" href="register.html?intent=sponsor">Become a Sponsor</a>
+            <a class="choice-card" href="register.html?intent=speaker">Become a Speaker</a>
+            <a class="choice-card" href="register.html?intent=ambassador">Become an Ambassador</a>
+            <a class="choice-card" href="register.html?intent=partner">Become a Partner</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
