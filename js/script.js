@@ -89,7 +89,7 @@ document.querySelectorAll(".view-bio").forEach((btn) => {
     document.getElementById("bioName").textContent = name;
     document.getElementById("bioTitle").textContent = role;
     document.getElementById("bioText").textContent =
-      "Improving the GDP and bringing about high rates of employment in a every Nation to champion an emergent economy in all developing countries through an ecosystem of self sustaining entrepreneurs.";
+      "Improving the GDP and bringing about high rates of employment in every Nation to champion an emergent economy in all developing countries through an ecosystem of self sustaining entrepreneurs.";
     document.getElementById("bioImg").src = img;
     bioModal.style.display = "flex";
   });
@@ -117,7 +117,7 @@ document.querySelectorAll(".view-bio").forEach((btn) => {
 
 // Preselect ticket on register page based on query params
 (function preselectRegisterTicket() {
-  const ticketSelect = document.querySelector('.register-form select[name="ticket"], .register-form select[name="Type of ticket"]');
+  const ticketSelect = document.querySelector('.register-form select[name="ticket"], .register-form select[name="Type of ticket"], .register-form select[name="type_of_ticket"]');
   if (!ticketSelect) return;
   const params = new URLSearchParams(window.location.search);
   const ticketParam = params.get('ticket');
@@ -167,3 +167,5 @@ document.querySelectorAll(".view-bio").forEach((btn) => {
     }
   }
 })();
+
+// Removed custom Formcarry AJAX override to allow native POST + Formcarry redirects
