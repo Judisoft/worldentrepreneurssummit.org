@@ -184,4 +184,41 @@ if (bioModal) {
   }
 })();
 
+// Fetch submit for register form only
+(function submitRegisterWithFetch() {
+  const registerForm = document.querySelector('.register-form');
+  if (!registerForm) return;
+
+  registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const actionUrl = registerForm.getAttribute('action');
+    const formData = new FormData(registerForm);
+
+    fetch(actionUrl, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    })
+      .then((response) => {
+        if (response.ok) {
+          // ✅ Success → redirect to thank you page
+          window.location.href = "thank-you.html";
+        } else {
+          // ❌ Server-side validation or error
+          window.location.href = "error.html";
+        }
+      })
+      .catch(error => {
+        console.error("Network error:", error);
+        // ❌ Network / fetch error
+        window.location.href = "error.html";
+      });
+  });
+})();
+
+
+
 // Removed custom Formcarry AJAX override to allow native POST + Formcarry redirects
