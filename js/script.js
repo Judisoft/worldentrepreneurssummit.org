@@ -185,39 +185,40 @@ if (bioModal) {
 })();
 
 // Fetch submit for register form only
-(function submitRegisterWithFetch() {
+(function submitRegisterWithEmailJS() {
   const registerForm = document.querySelector('.register-form');
   if (!registerForm) return;
 
   registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const actionUrl = registerForm.getAttribute('action');
-    const formData = new FormData(registerForm);
+    // Replace with your EmailJS service + template IDs
+    const serviceID = "service_iyawf42";
+    const templateID = "template_jqpsscp";
 
-    fetch(actionUrl, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        "Accept": "application/json"
-      }
-    })
-      .then((response) => {
-        if (response.ok) {
-          // ✅ Success → redirect to thank you page
-          window.location.href = "thank-you.html";
-        } else {
-          // ❌ Server-side validation or error
-          window.location.href = "error.html";
-        }
+    // Collect form data
+    const formData = {
+      name: registerForm.querySelector('input[name="name"]').value,
+      email: registerForm.querySelector('input[name="email"]').value,
+      phone: registerForm.querySelector('input[name="phone"]').value,
+      type_of_ticket: registerForm.querySelector('select[name="type_of_ticket"]').value,
+      company: registerForm.querySelector('input[name="company"]').value
+    };
+
+    // Send using EmailJS
+    emailjs.send(serviceID, templateID, formData)
+      .then(() => {
+        // ✅ Success
+        window.location.href = "thank-you.html";
       })
-      .catch(error => {
-        console.error("Network error:", error);
-        // ❌ Network / fetch error
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        // ❌ Failure
         window.location.href = "error.html";
       });
   });
 })();
+
 
 
 
