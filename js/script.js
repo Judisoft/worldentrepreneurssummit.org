@@ -95,6 +95,22 @@ document.querySelectorAll(".view-bio").forEach((btn) => {
   });
 });
 
+// Bio modal close handlers
+if (bioModal) {
+  const bioCloseBtn = bioModal.querySelector(".close, .bioClose");
+  if (bioCloseBtn) {
+    bioCloseBtn.addEventListener("click", () => {
+      bioModal.style.display = "none";
+    });
+  }
+  window.addEventListener("click", (e) => {
+    if (e.target === bioModal) bioModal.style.display = "none";
+  });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") bioModal.style.display = "none";
+  });
+}
+
 // Form demos
 // document
 //   .getElementById("registerForm")
