@@ -1,13 +1,13 @@
 AOS.init({ duration: 700 });
 
-// Countdown to November 27, 2025 09:00 local (only if countdown elements exist)
+// Countdown to December 14, 2025 09:00 local (only if countdown elements exist)
 (() => {
   const daysEl = document.getElementById("cd-days");
   const hoursEl = document.getElementById("cd-hours");
   const minsEl = document.getElementById("cd-mins");
   const secsEl = document.getElementById("cd-secs");
   if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
-  const target = new Date("2025-11-27T09:00:00");
+  const target = new Date("2025-12-14T09:00:00");
   function tick() {
     const now = new Date();
     const d = Math.max(0, target - now);
